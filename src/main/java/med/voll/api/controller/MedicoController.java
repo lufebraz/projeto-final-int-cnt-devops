@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.micrometer.core.annotation.Timed;
 import jakarta.validation.Valid;
 import med.voll.api.medico.*;
 import org.slf4j.Logger;
@@ -25,6 +26,7 @@ public class MedicoController {
         repository.save(new Medico(dados));
     }
 
+    @Timed(value = "hello.response.time")
     @GetMapping
     public Page<DadosListagemMedico> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         LOGGER.info("Listando médicos");
