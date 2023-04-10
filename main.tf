@@ -1,5 +1,5 @@
-resource "github_repository" "Reis-Silva" {
-  name        = "_devops"
+resource "github_repository" "lufebraz" {
+  name        = "projeto-final-int-cnt-devops"
   description = "devops deploy"
 
   visibility = "public"
